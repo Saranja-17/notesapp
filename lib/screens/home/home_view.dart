@@ -137,6 +137,7 @@ class HomeView extends StatelessWidget {
                             gridDelegate:
                                 const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 2,
+                                    childAspectRatio: 0.5,
                                     crossAxisSpacing: 30,
                                     mainAxisSpacing: 20),
                             itemCount: 8,
@@ -206,8 +207,8 @@ class HomeView extends StatelessWidget {
 class _NoteCard extends ViewModelWidget<HomeViewModel> {
   @override
   Widget build(BuildContext context, HomeViewModel viewModel) => Container(
-        width: 150.0,
-        height: 350.0,
+        //width: 150.0,
+        height: 150.0,
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30.0),
@@ -223,22 +224,22 @@ class _NoteCard extends ViewModelWidget<HomeViewModel> {
           children: [
             Center(
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: BorderRadius.circular(50.0),
                 child: Image.asset(
                   'assets/t.png',
                   width: 350,
-                  height: 50,
+                  height: 150,
                 ),
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
             const Text(
               'Book covers',
               textAlign: TextAlign.start,
               style: TextStyle(
-                fontSize: 15,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -246,7 +247,7 @@ class _NoteCard extends ViewModelWidget<HomeViewModel> {
               'You’ve penned the next great page-turner.Or maybe you discovered the next Hemingway.',
               textAlign: TextAlign.left,
               style: TextStyle(
-                fontSize: 10,
+                fontSize: 15,
                 //fontWeight: FontWeight.bold,
               ),
             ),
